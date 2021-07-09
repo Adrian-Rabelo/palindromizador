@@ -1,28 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Relogio from "./components/Relogio";
+import Numero from "./components/Numero.js";
 
 export default function App() {
-    const textoDestaque = {
-        color: "#00f",
-        fontSize: "3em",
-    };
+    const [num, setNum] = useState(10);
+    let n1 = 50;
     return (
         <>
-            <section className="caixa">
-                <Relogio />
-                <h1 style={{ color: "#f00", fontSize: "5em" }}>
-                    Rabelinho Dev
-                </h1>
-                <h2 style={textoDestaque}>Curso de React</h2>
-                <p className="texto">GitHub: github.com/adrian-rabelo</p>
-                <a
-                    href="https://www.example.com"
-                    rel="noreferrer"
-                    target="_blank">
-                    Dev Rabelin
-                </a>
-            </section>
+            <p>Valor do state num em App: {num}</p>
+            <Numero num={num} setNum={setNum} />
         </>
     );
 }
