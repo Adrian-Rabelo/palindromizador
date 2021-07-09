@@ -1,11 +1,12 @@
 import React from "react";
-import Pinto from "./img/pinto-transp.png";
+import Eu from "./img/euzim-transp.png";
 
 export default function Header() {
     return (
         <header>
-            <img src={Pinto} />
-            <h1>Rabelinho </h1>
+            <h1>
+                Rabelinho <img src={Eu} width="50" alt="Rabelinho Dev" />
+            </h1>
         </header>
     );
 }
