@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import Relogio from "./components/Relogio";
+
 export default function App() {
     const textoDestaque = {
         color: "#00f",
@@ -8,6 +10,7 @@ export default function App() {
     return (
         <>
             <section className="caixa">
+                <Relogio />
                 <h1 style={{ color: "#f00", fontSize: "5em" }}>
                     Rabelinho Dev
                 </h1>
