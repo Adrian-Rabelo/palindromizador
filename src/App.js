@@ -3,12 +3,28 @@ import "./App.css";
 import Numero from "./components/Numero.js";
 
 export default function App() {
-    const [num, setNum] = useState(10);
-    let n1 = 50;
+    let [color, setColor] = useState("");
+    let [text, setText] = useState("");
+    let texto = document.getElementById("texto");
     return (
         <>
-            <p>Valor do state num em App: {num}</p>
-            <Numero num={num} setNum={setNum} />
+            <section>
+                <h1>Texto atualizador</h1>
+                <input
+                    type="text"
+                    id="texto"
+                    onChange={() => {
+                        setText(texto.value);
+                    }}
+                />
+            </section>
+            <section>
+                <div>
+                    <h1>
+                        <p>Seu texto: {text}</p>
+                    </h1>
+                </div>
+            </section>
         </>
     );
 }
