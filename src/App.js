@@ -4,14 +4,10 @@ import Numero from "./components/Numero.js";
 import PalavraRevertida from "./components/PalavraRevertida";
 
 export default function App() {
-    let [color, setColor] = useState("");
     let [input, setInput] = useState("");
-    let [pReverso, setPReverso] = useState("");
+    let [revertida, setRevertida] = useState("");
     function reverterPalavra(palavra) {
         return palavra.split("").reverse().join("");
-    }
-    function teste() {
-        return <PalavraRevertida palavraRevertida={reverterPalavra(input)} />;
     }
 
     return (
@@ -25,13 +21,20 @@ export default function App() {
                             id="texto"
                             onChange={(event) => setInput(event.target.value)}
                         />
-                        <button className="reverter">Reverter !</button>
+                        <button
+                            onMouseDown={() => {
+                                setRevertida(reverterPalavra(input));
+                            }}
+                            className="reverter">
+                            Reverter !
+                        </button>
                     </div>
                 </section>
                 <section>
                     <div className="textoEscrito">
                         <h1>
                             <p>Seu texto</p>|<br />v<p>{input}</p>
+                            <PalavraRevertida palavraRevertida={revertida} />
                             <PalavraRevertida
                                 palavraRevertida={reverterPalavra(input)}
                             />
