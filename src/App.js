@@ -26,6 +26,7 @@ export default function App() {
                     <div className="textoEntrada">
                         <h1>Palíndromizador</h1>
                         <input
+                        placeholder="Escreva sua palavra aqui"
                             type="text"
                             id="texto"
                             onChange={(event) => {
@@ -47,7 +48,7 @@ export default function App() {
                                     );
                                 }
                             }}
-                            className="reverter">
+                            className="palindromo">
                             É palíndromo?
                         </button>
                     </div>
