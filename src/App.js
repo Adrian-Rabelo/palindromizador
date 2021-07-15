@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import "./App.css";
-import Numero from "./components/Numero.js";
-import PalavraRevertida from "./components/PalavraRevertida";
 
 export default function App() {
     let [input, setInput] = useState("");
     let [revertida, setRevertida] = useState("");
+    let [isPalindrome, setIsPalindrome] = useState("");
     const checkInput = () => {
         return input === "" ? "sem entrada" : input;
     };
     const checkRevertida = () => {
-        return input === "" ? "sem entrada" : reverterPalavra(input);
+        return revertida === "" ? "sem entrada" : revertida;
+    };
+
+    const checkPalindrome = () => {
+        return isPalindrome === "" ? "sem entrada" : isPalindrome;
     };
     function reverterPalavra(palavra) {
         return palavra.split("").reverse().join("");
@@ -25,14 +28,27 @@ export default function App() {
                         <input
                             type="text"
                             id="texto"
-                            onChange={(event) => setInput(event.target.value)}
+                            onChange={(event) => {
+                                setInput(event.target.value);
+                                setRevertida(
+                                    reverterPalavra(event.target.value),
+                                );
+                            }}
                         />
                         <button
                             onMouseDown={() => {
-                                setRevertida(reverterPalavra(input));
+                                if (revertida === input) {
+                                    setIsPalindrome(
+                                        "Sua palavra é um palíndromo",
+                                    );
+                                } else {
+                                    setIsPalindrome(
+                                        "Sua palavra NÃO é um palíndromo",
+                                    );
+                                }
                             }}
                             className="reverter">
-                            Reverter !
+                            É palíndromo?
                         </button>
                     </div>
                 </section>
@@ -48,11 +64,7 @@ export default function App() {
                             <div className="input2">
                                 <p>{checkRevertida()} </p>
                             </div>
-                            <div>
-                                <PalavraRevertida
-                                    palavraRevertida={revertida}
-                                />
-                            </div>
+                            <div>{checkPalindrome()}</div>
                         </h1>
                     </div>
                 </section>
