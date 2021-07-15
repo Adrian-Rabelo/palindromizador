@@ -22,8 +22,8 @@ export default function App() {
     return (
         <>
             <section className="geral">
-                <section>
-                    <div className="textoEntrada">
+                <section className="titleSection">
+                    <div className="title">
                         <h1>Palíndromizador</h1>
                         <input
                         placeholder="Escreva sua palavra aqui"
@@ -36,6 +36,9 @@ export default function App() {
                                 );
                             }}
                         />
+                        </div>
+
+                        <div>
                         <button
                             onMouseDown={() => {
                                 if (revertida === input) {
@@ -48,25 +51,20 @@ export default function App() {
                                     );
                                 }
                             }}
-                            className="palindromo">
+                            className="btnPalindrome">
                             É palíndromo?
                         </button>
-                    </div>
+                        </div>
                 </section>
                 <section>
-                    <div className="textoEscrito">
-                        <h1 className="palavras">
-                            <p>Seu texto</p>v
+                    <div className="content">
                             <div className="input1">
                                 <p>{checkInput()}</p>
                             </div>
-                            <hr />
-                            <p>Sua palavra revertida</p>v
                             <div className="input2">
                                 <p>{checkRevertida()} </p>
                             </div>
                             <div>{checkPalindrome()}</div>
-                        </h1>
                     </div>
                 </section>
             </section>
