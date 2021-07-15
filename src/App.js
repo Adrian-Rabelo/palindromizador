@@ -6,14 +6,14 @@ export default function App() {
     let [revertida, setRevertida] = useState("");
     let [isPalindrome, setIsPalindrome] = useState("");
     const checkInput = () => {
-        return input === "" ? "sem entrada" : input;
+        return input === "" ? "Sem entrada" : input;
     };
     const checkRevertida = () => {
-        return revertida === "" ? "sem entrada" : revertida;
+        return revertida === "" ? "Sem entrada" : revertida;
     };
 
     const checkPalindrome = () => {
-        return isPalindrome === "" ? "sem entrada" : isPalindrome;
+        return isPalindrome === "" ? "Ainda não verificado" : isPalindrome;
     };
     function reverterPalavra(palavra) {
         return palavra.split("").reverse().join("");
