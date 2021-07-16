@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import {AiOutlineArrowDown} from "react-icons/ai"
 
 export default function App() {
     let [input, setInput] = useState("");
@@ -21,8 +22,8 @@ export default function App() {
 
     return (
         <>
-            <section className="geral">
-                <section className="titleSection">
+            <div className="geral">
+                <div className="row">
                     <div className="title">
                         <h1>Palíndromizador</h1>
                         <input
@@ -36,9 +37,8 @@ export default function App() {
                                 );
                             }}
                         />
-                        </div>
-
-                        <div>
+                       
+                            <div className="button">
                         <button
                             onMouseDown={() => {
                                 if (revertida === input) {
@@ -55,19 +55,24 @@ export default function App() {
                             É palíndromo?
                         </button>
                         </div>
-                </section>
-                <section>
-                    <div className="content">
+                        </div>
+                </div>
+                <div>
+                    <div className="row">
                             <div className="input1">
+                                <h3>Sua palavra</h3>
+                            <AiOutlineArrowDown/>
                                 <p>{checkInput()}</p>
                             </div>
                             <div className="input2">
+                                <h3>Palíndromo</h3>
+                                <AiOutlineArrowDown />
                                 <p>{checkRevertida()} </p>
                             </div>
                             <div>{checkPalindrome()}</div>
                     </div>
-                </section>
-            </section>
+                </div>
+            </div>
         </>
     );
 }
